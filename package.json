@@ -1,0 +1,71 @@
+{
+  "name": "degasui",
+  "version": "0.1.0",
+  "description": "UI Component Library with React Three.js components",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "gen-index": "tsx scripts/gen-index.ts",
+    "verify-license": "tsx scripts/verify-license.ts"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "typescript",
+    "three.js",
+    "3d",
+    "webgl"
+  ],
+  "author": "David-Dohyun-Im",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@react-three/csg": "^4.0.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.16.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
+    "postprocessing": "^6.37.8",
+    "tailwind-merge": "^2.5.4",
+    "three": "^0.160.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/three": "^0.160.0",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.7.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/David-Dohyun-Im/DegasUI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/David-Dohyun-Im/DegasUI/issues"
+  },
+  "homepage": "https://github.com/David-Dohyun-Im/DegasUI#readme"
+}

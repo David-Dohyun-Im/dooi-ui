@@ -1,0 +1,33 @@
+{
+  "id": "landing-morphic",
+  "title": "Landing – Morphic Dreams",
+  "description": "Hero + background fluid blob + minimal layout",
+  "license": {
+    "spdx": "MIT",
+    "redistribution": true
+  },
+  "uses": [
+    {
+      "category": "ui",
+      "id": "fluid-blob"
+    },
+    {
+      "category": "Hero",
+      "id": "MorphicDreamsDemo"
+    }
+  ],
+  "dependencies": {
+    "npm": ["three", "@react-three/fiber"],
+    "peer": ["react", "react-dom", "next"]
+  },
+  "patches": {
+    "tailwindConfig": "tailwind.patch.json",
+    "globalsCss": "globals.css.snippet"
+  },
+  "imports": {
+    "page": "./page.jsx",
+    "mountPathHint": "app/(marketing)/page.tsx"
+  },
+  "version": "2025.01.01-1",
+  "checksum": "sha256:REPLACE_ME"
+}

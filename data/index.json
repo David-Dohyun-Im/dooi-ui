@@ -1,0 +1,40 @@
+{
+  "components": [
+    {
+      "category": "ui",
+      "id": "fluid-blob",
+      "title": "LavaLamp Primitive",
+      "license": "MIT",
+      "version": "2025.01.01-1"
+    },
+    {
+      "category": "Hero",
+      "id": "MorphicDreamsDemo",
+      "title": "Hero – Morphic Dreams",
+      "license": "MIT",
+      "version": "2025.01.01-1"
+    },
+    {
+      "category": "Cards",
+      "id": "ShuffleGridDemo",
+      "title": "Cards – Shuffle Grid",
+      "license": "MIT",
+      "version": "2025.01.01-1"
+    }
+  ],
+  "templates": [
+    {
+      "id": "landing-morphic",
+      "title": "Landing – Morphic Dreams",
+      "license": "MIT",
+      "version": "2025.01.01-1"
+    },
+    {
+      "id": "pricing-classic",
+      "title": "Pricing – Classic",
+      "license": "MIT",
+      "version": "2025.01.01-1"
+    }
+  ],
+  "generatedAt": "2025-01-01T00:00:00Z"
+}
