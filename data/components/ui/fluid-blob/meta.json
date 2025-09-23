@@ -1,0 +1,16 @@
+{
+  "id": "fluid-blob",
+  "title": "Fluid Blob",
+  "description": "Basic 3D fluid blob component for backgrounds and visual effects",
+  "category": "ui",
+  "tags": ["3d", "background", "visual-effects", "three.js"],
+  "dependencies": {
+    "npm": ["three", "@react-three/fiber"],
+    "peer": ["react", "react-dom"]
+  },
+  "version": "2025.01.01-1",
+  "license": "MIT",
+  "author": "DooiUI",
+  "files": ["fluid-blob.tsx"],
+  "type": "component"
+}

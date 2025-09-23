@@ -1,0 +1,22 @@
+{
+  "id": "FluidBlobDemo",
+  "title": "Fluid Blob Demo",
+  "description": "Complete 3D lava lamp hero section with morphing background and text overlay",
+  "category": "Hero",
+  "tags": ["3d", "hero", "lava-lamp", "morphing", "complete-section"],
+  "dependencies": {
+    "npm": ["three", "@react-three/fiber"],
+    "peer": ["react", "react-dom"]
+  },
+  "version": "2025.01.01-1",
+  "license": "MIT",
+  "author": "DooiUI",
+  "files": ["FluidBlobDemo.tsx"],
+  "type": "demo",
+  "uses": [
+    {
+      "category": "ui",
+      "id": "fluid-blob"
+    }
+  ]
+}

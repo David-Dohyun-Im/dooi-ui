@@ -3,23 +3,38 @@
     {
       "category": "ui",
       "id": "fluid-blob",
-      "title": "LavaLamp Primitive",
+      "title": "Fluid Blob",
+      "description": "Basic 3D fluid blob component for backgrounds and visual effects",
+      "tags": ["3d", "background", "visual-effects", "three.js"],
       "license": "MIT",
-      "version": "2025.01.01-1"
+      "version": "2025.01.01-2"
+    },
+    {
+      "category": "ui",
+      "id": "shuffle-grid",
+      "title": "Shuffle Grid",
+      "description": "Animated image shuffle grid with smooth transitions and hover effects",
+      "tags": ["animation", "grid", "cards", "transitions", "interactive"],
+      "license": "MIT",
+      "version": "2025.01.01-2"
     },
     {
       "category": "Hero",
-      "id": "MorphicDreamsDemo",
-      "title": "Hero – Morphic Dreams",
+      "id": "FluidBlobDemo",
+      "title": "Fluid Blob Demo",
+      "description": "Complete 3D lava lamp hero section with morphing background and text overlay",
+      "tags": ["3d", "hero", "lava-lamp", "morphing", "complete-section"],
       "license": "MIT",
-      "version": "2025.01.01-1"
+      "version": "2025.01.01-2"
     },
     {
       "category": "Cards",
       "id": "ShuffleGridDemo",
-      "title": "Cards – Shuffle Grid",
+      "title": "Shuffle Grid Demo",
+      "description": "Animated image shuffle grid with smooth transitions and hover effects",
+      "tags": ["animation", "grid", "cards", "transitions", "interactive"],
       "license": "MIT",
-      "version": "2025.01.01-1"
+      "version": "2025.01.01-2"
     }
   ],
   "templates": [
@@ -27,14 +42,15 @@
       "id": "landing-morphic",
       "title": "Landing – Morphic Dreams",
       "license": "MIT",
-      "version": "2025.01.01-1"
+      "version": "2025.01.01-2"
     },
     {
       "id": "pricing-classic",
       "title": "Pricing – Classic",
       "license": "MIT",
-      "version": "2025.01.01-1"
+      "version": "2025.01.01-2"
     }
   ],
-  "generatedAt": "2025-01-01T00:00:00Z"
+  "generatedAt": "2025-01-01T00:00:00Z",
+  "metadataVersion": "0.2.0"
 }

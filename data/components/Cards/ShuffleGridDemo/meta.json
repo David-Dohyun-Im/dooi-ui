@@ -1,0 +1,22 @@
+{
+  "id": "ShuffleGridDemo",
+  "title": "Shuffle Grid Demo",
+  "description": "Animated image shuffle grid with smooth transitions and hover effects",
+  "category": "Cards",
+  "tags": ["animation", "grid", "cards", "transitions", "interactive"],
+  "dependencies": {
+    "npm": ["framer-motion"],
+    "peer": ["react", "react-dom"]
+  },
+  "version": "2025.01.01-1",
+  "license": "MIT",
+  "author": "DooiUI",
+  "files": ["ShuffleGridDemo.tsx"],
+  "type": "demo",
+  "uses": [
+    {
+      "category": "ui",
+      "id": "shuffle-grid"
+    }
+  ]
+}
