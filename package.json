@@ -1,10 +1,10 @@
 {
-  "name": "degasui",
+  "name": "dooi",
   "version": "0.1.0",
   "description": "Curated UI Component Templates - React Three.js components",
   "main": "bin.js",
   "bin": {
-    "degasui": "./bin.js"
+    "dooi": "./bin.js"
   },
   "type": "module",
   "scripts": {
@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/David-Dohyun-Im/DegasUI.git"
+    "url": "https://github.com/David-Dohyun-Im/dooi-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/David-Dohyun-Im/DegasUI/issues"
+    "url": "https://github.com/David-Dohyun-Im/dooi-ui/issues"
   },
-  "homepage": "https://github.com/David-Dohyun-Im/DegasUI#readme"
+  "homepage": "https://github.com/David-Dohyun-Im/dooi-ui#readme"
 }

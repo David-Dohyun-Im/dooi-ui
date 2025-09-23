@@ -41,7 +41,7 @@ async function listTemplates() {
       }
     }
     
-    console.log('🎨 DegasUI - Available Templates\n');
+    console.log('🎨 Dooi - Available Templates\n');
     
     if (components.length > 0) {
       console.log('📦 Components:');
@@ -60,9 +60,9 @@ async function listTemplates() {
     }
     
     console.log('Usage:');
-    console.log('  npx degasui list                    # List all templates');
-    console.log('  npx degasui get <template-id>       # Get template files');
-    console.log('  npx degasui get <category>/<name>   # Get component');
+    console.log('  npx dooi list                    # List all templates');
+    console.log('  npx dooi get <template-id>       # Get template files');
+    console.log('  npx dooi get <category>/<name>   # Get component');
     
   } catch (error) {
     console.error('Error listing templates:', error.message);
@@ -230,40 +230,40 @@ function main() {
     listTemplates();
   } else if (args[0] === 'get') {
     if (args.length < 2) {
-      console.error('Usage: npx degasui get <template-id>');
+      console.error('Usage: npx dooi get <template-id>');
       process.exit(1);
     }
     getTemplate(args[1]);
   } else if (args[0] === 'help' || args[0] === '--help' || args[0] === '-h') {
     console.log(`
-🎨 DegasUI - Curated UI Component Templates
+🎨 Dooi - Curated UI Component Templates
 
 Usage:
-  npx degasui list                    # List all available templates
-  npx degasui get <template-id>       # Get template files
-  npx degasui get <category>/<name>   # Get component
-  npx degasui help                    # Show this help
+  npx dooi list                    # List all available templates
+  npx dooi get <template-id>       # Get template files
+  npx dooi get <category>/<name>   # Get component
+  npx dooi help                    # Show this help
 
 Examples:
   # List all templates
-  npx degasui list
+  npx dooi list
 
   # Get a complete template
-  npx degasui get landing-morphic
+  npx dooi get landing-morphic
 
   # Get a specific component
-  npx degasui get ui/fluid-blob
+  npx dooi get ui/fluid-blob
 
 Available Templates:
   - fluid-blob: 3D animated blob with shader effects
   - shuffle-grid: Animated image grid with Framer Motion
   - landing-morphic: Complete landing page template
 
-Repository: https://github.com/David-Dohyun-Im/DegasUI
+Repository: https://github.com/David-Dohyun-Im/dooi-ui
 `);
   } else {
     console.error(`Unknown command: ${args[0]}`);
-    console.error('Run "npx degasui help" for usage information.');
+    console.error('Run "npx dooi help" for usage information.');
     process.exit(1);
   }
 }
