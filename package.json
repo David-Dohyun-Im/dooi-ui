@@ -1,10 +1,10 @@
 {
-  "name": "dooi",
+  "name": "dooi-ui",
   "version": "0.1.0",
   "description": "Curated UI Component Templates - React Three.js components",
   "main": "bin.js",
   "bin": {
-    "dooi": "./bin.js"
+    "dooi-ui": "./bin.js"
   },
   "type": "module",
   "scripts": {

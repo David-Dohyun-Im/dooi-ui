@@ -41,7 +41,7 @@ async function listTemplates() {
       }
     }
     
-    console.log('🎨 Dooi - Available Templates\n');
+    console.log('🎨 DooiUI - Available Templates\n');
     
     if (components.length > 0) {
       console.log('📦 Components:');
@@ -60,9 +60,9 @@ async function listTemplates() {
     }
     
     console.log('Usage:');
-    console.log('  npx dooi list                    # List all templates');
-    console.log('  npx dooi get <template-id>       # Get template files');
-    console.log('  npx dooi get <category>/<name>   # Get component');
+    console.log('  npx dooi-ui list                    # List all templates');
+    console.log('  npx dooi-ui get <template-id>       # Get template files');
+    console.log('  npx dooi-ui get <category>/<name>   # Get component');
     
   } catch (error) {
     console.error('Error listing templates:', error.message);
@@ -230,29 +230,29 @@ function main() {
     listTemplates();
   } else if (args[0] === 'get') {
     if (args.length < 2) {
-      console.error('Usage: npx dooi get <template-id>');
+      console.error('Usage: npx dooi-ui-ui get <template-id>');
       process.exit(1);
     }
     getTemplate(args[1]);
   } else if (args[0] === 'help' || args[0] === '--help' || args[0] === '-h') {
     console.log(`
-🎨 Dooi - Curated UI Component Templates
+🎨 DooiUI - Curated UI Component Templates
 
 Usage:
-  npx dooi list                    # List all available templates
-  npx dooi get <template-id>       # Get template files
-  npx dooi get <category>/<name>   # Get component
-  npx dooi help                    # Show this help
+  npx dooi-ui list                    # List all available templates
+  npx dooi-ui get <template-id>       # Get template files
+  npx dooi-ui get <category>/<name>   # Get component
+  npx dooi-ui help                    # Show this help
 
 Examples:
   # List all templates
-  npx dooi list
+  npx dooi-ui list
 
   # Get a complete template
-  npx dooi get landing-morphic
+  npx dooi-ui get landing-morphic
 
   # Get a specific component
-  npx dooi get ui/fluid-blob
+  npx dooi-ui get ui/fluid-blob
 
 Available Templates:
   - fluid-blob: 3D animated blob with shader effects
@@ -263,7 +263,7 @@ Repository: https://github.com/David-Dohyun-Im/dooi-ui
 `);
   } else {
     console.error(`Unknown command: ${args[0]}`);
-    console.error('Run "npx dooi help" for usage information.');
+    console.error('Run "npx dooi-ui help" for usage information.');
     process.exit(1);
   }
 }
