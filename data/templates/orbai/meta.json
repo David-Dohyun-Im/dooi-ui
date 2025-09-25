@@ -1,0 +1,25 @@
+{
+  "title": "Orbai Page Template",
+  "description": "Complete page with navigation, hero, and quote sections",
+  "dependencies": {
+    "npm": ["three", "@react-three/fiber", "framer-motion"],
+    "peer": ["react", "react-dom"]
+  },
+  "uses": [
+    {
+      "category": "Navbars",
+      "id": "designaliDemo"
+    },
+    {
+      "category": "Hero", 
+      "id": "OrbaiDemo"
+    },
+    {
+      "category": "Text",
+      "id": "QuoteDemo"
+    }
+  ],
+  "files": [
+    "OrbaiTemplate.jsx"
+  ]
+}

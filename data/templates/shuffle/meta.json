@@ -1,0 +1,17 @@
+{
+  "title": "Shuffle Page Template", 
+  "description": "Page with animated shuffle grid component",
+  "dependencies": {
+    "npm": ["framer-motion"],
+    "peer": ["react", "react-dom"]
+  },
+  "uses": [
+    {
+      "category": "Cards",
+      "id": "ShuffleGridDemo"
+    }
+  ],
+  "files": [
+    "ShuffleTemplate.jsx"
+  ]
+}
