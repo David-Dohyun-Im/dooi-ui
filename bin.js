@@ -110,8 +110,6 @@ async function getTemplate(templateId) {
     
     // 템플릿인지 확인
     const templatePath = path.join(dataPath, 'templates', templateId);
-    console.log('Debug - templatePath:', templatePath);
-    console.log('Debug - exists:', await exists(templatePath));
     if (await exists(templatePath)) {
       console.log(`📄 Template: ${templateId}\n`);
       
@@ -156,12 +154,33 @@ async function getTemplate(templateId) {
         console.log('  2. Copy template files to your project');
         console.log('  3. Import and use in your code\n');
         
-        // 파일 목록
+        // 파일 목록 및 다운로드 옵션
         const files = await getAllFiles(templatePath);
         console.log('📁 Files:');
         files.forEach(file => {
           console.log(`  ${file}`);
         });
+        console.log('');
+        
+        // 다운로드 옵션 제공
+        console.log('💾 Download Options:');
+        console.log('  --download or -d: Download files to current directory');
+        console.log('  --output <dir> or -o <dir>: Download to specific directory');
+        console.log('');
+        
+        // 명령행 인수 확인
+        const args = process.argv.slice(2);
+        const downloadIndex = args.findIndex(arg => arg === '--download' || arg === '-d');
+        const outputIndex = args.findIndex(arg => arg === '--output' || arg === '-o');
+        
+        if (downloadIndex !== -1 || outputIndex !== -1) {
+          const outputDir = outputIndex !== -1 && args[outputIndex + 1] 
+            ? args[outputIndex + 1] 
+            : process.cwd();
+          
+          console.log(`📥 Downloading files to: ${outputDir}`);
+          await downloadTemplate(templatePath, outputDir, files);
+        }
         
         return;
       }
@@ -270,6 +289,35 @@ async function getAllFiles(dir) {
   return files;
 }
 
+async function downloadTemplate(templatePath, outputDir, files) {
+  try {
+    // 출력 디렉토리 생성
+    await fs.mkdir(outputDir, { recursive: true });
+    
+    // 각 파일 복사
+    for (const file of files) {
+      const sourcePath = path.join(templatePath, file);
+      const destPath = path.join(outputDir, file);
+      
+      // 디렉토리 생성
+      await fs.mkdir(path.dirname(destPath), { recursive: true });
+      
+      // 파일 복사
+      await fs.copyFile(sourcePath, destPath);
+      console.log(`  ✅ ${file}`);
+    }
+    
+    console.log(`\n🎉 Template downloaded successfully to: ${outputDir}`);
+    console.log('📝 Next steps:');
+    console.log('  1. Install dependencies (see above)');
+    console.log('  2. Import and use the components in your project');
+    
+  } catch (error) {
+    console.error('❌ Error downloading template:', error.message);
+    process.exit(1);
+  }
+}
+
 function main() {
   const args = process.argv.slice(2);
   
@@ -288,6 +336,8 @@ function main() {
 Usage:
   npx dooi-ui list                    # List all available templates
   npx dooi-ui get <template-id>       # Get template files
+  npx dooi-ui get <template-id> --download  # Download template files
+  npx dooi-ui get <template-id> -o <dir>    # Download to specific directory
   npx dooi-ui get <category>/<name>   # Get component
   npx dooi-ui help                    # Show this help
 
@@ -295,16 +345,24 @@ Examples:
   # List all templates
   npx dooi-ui list
 
-  # Get a complete template
-  npx dooi-ui get landing-morphic
+  # Get template information
+  npx dooi-ui get landing
+
+  # Download template files
+  npx dooi-ui get landing --download
+  npx dooi-ui get landing -d
+
+  # Download to specific directory
+  npx dooi-ui get landing -o ./my-project
+  npx dooi-ui get landing --output ./my-project
 
   # Get a specific component
   npx dooi-ui get ui/fluid-blob
 
 Available Templates:
-  - fluid-blob: 3D animated blob with shader effects
-  - shuffle-grid: Animated image grid with Framer Motion
-  - landing-morphic: Complete landing page template
+  - landing: Landing page with fluid blob hero
+  - orbai: Complete page with navigation, hero, and quote sections
+  - shuffle: Page with animated shuffle grid
 
 Repository: https://github.com/David-Dohyun-Im/dooi-ui
 `);
