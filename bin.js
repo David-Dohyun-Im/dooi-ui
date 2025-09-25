@@ -179,7 +179,7 @@ async function getTemplate(templateId) {
             : process.cwd();
           
           console.log(`📥 Downloading files to: ${outputDir}`);
-          await downloadTemplate(templatePath, outputDir, files);
+          await downloadTemplate(templatePath, outputDir, files, meta);
         }
         
         return;
@@ -289,13 +289,14 @@ async function getAllFiles(dir) {
   return files;
 }
 
-async function downloadTemplate(templatePath, outputDir, files) {
+async function downloadTemplate(templatePath, outputDir, files, meta) {
   try {
     // 출력 디렉토리 생성
     await fs.mkdir(outputDir, { recursive: true });
     
-    // 각 파일 복사
-    for (const file of files) {
+    // 템플릿 파일들만 복사 (meta.json 제외)
+    const templateFiles = files.filter(file => !file.endsWith('meta.json'));
+    for (const file of templateFiles) {
       const sourcePath = path.join(templatePath, file);
       const destPath = path.join(outputDir, file);
       
@@ -305,6 +306,61 @@ async function downloadTemplate(templatePath, outputDir, files) {
       // 파일 복사
       await fs.copyFile(sourcePath, destPath);
       console.log(`  ✅ ${file}`);
+      
+      // 템플릿 파일의 import 경로 수정
+      if (file.endsWith('.jsx') || file.endsWith('.tsx')) {
+        let content = await fs.readFile(destPath, 'utf8');
+        
+        // import 경로를 상대 경로로 수정
+        content = content.replace(
+          /from ['"]\.\.\/\.\.\/data\/components\/([^'"]+)['"]/g,
+          'from "./components/$1"'
+        );
+        
+        await fs.writeFile(destPath, content, 'utf8');
+        console.log(`  🔧 Updated import paths in ${file}`);
+      }
+    }
+    
+    // 사용되는 컴포넌트들 다운로드
+    if (meta.uses && meta.uses.length > 0) {
+      console.log('\n📦 Downloading required components:');
+      const dataPath = path.join(path.dirname(templatePath), '..');
+      
+      for (const component of meta.uses) {
+        const componentDir = path.join(dataPath, 'components', component.category, component.id);
+        const componentFile = path.join(dataPath, 'components', component.category, component.id + '.tsx');
+        
+        // 컴포넌트 디렉토리 또는 파일이 존재하는지 확인
+        if (await exists(componentDir)) {
+          // 디렉토리인 경우
+          const componentFiles = await getAllFiles(componentDir);
+          
+          for (const file of componentFiles) {
+            const sourcePath = path.join(componentDir, file);
+            const destPath = path.join(outputDir, 'components', component.category, component.id, file);
+            
+            // 디렉토리 생성
+            await fs.mkdir(path.dirname(destPath), { recursive: true });
+            
+            // 파일 복사
+            await fs.copyFile(sourcePath, destPath);
+            console.log(`  ✅ components/${component.category}/${component.id}/${file}`);
+          }
+        } else if (await exists(componentFile)) {
+          // 파일인 경우
+          const destPath = path.join(outputDir, 'components', component.category, component.id + '.tsx');
+          
+          // 디렉토리 생성
+          await fs.mkdir(path.dirname(destPath), { recursive: true });
+          
+          // 파일 복사
+          await fs.copyFile(componentFile, destPath);
+          console.log(`  ✅ components/${component.category}/${component.id}.tsx`);
+        } else {
+          console.log(`  ⚠️  Component not found: ${component.category}/${component.id}`);
+        }
+      }
     }
     
     console.log(`\n🎉 Template downloaded successfully to: ${outputDir}`);
