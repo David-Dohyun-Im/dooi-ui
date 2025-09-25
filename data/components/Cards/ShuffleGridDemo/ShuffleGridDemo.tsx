@@ -8,4 +8,4 @@ const ShuffleHeroDemo = () => {
   );
 };
 
-export { ShuffleHeroDemo };
+export default ShuffleHeroDemo;

@@ -1,0 +1,17 @@
+{
+  "title": "Landing Page Template",
+  "description": "Complete landing page with fluid blob hero section",
+  "dependencies": {
+    "npm": ["three", "@react-three/fiber"],
+    "peer": ["react", "react-dom"]
+  },
+  "uses": [
+    {
+      "category": "Hero",
+      "id": "FluidBlobDemo"
+    }
+  ],
+  "files": [
+    "LandingMorphic.jsx"
+  ]
+}
