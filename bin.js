@@ -110,6 +110,8 @@ async function getTemplate(templateId) {
     
     // 템플릿인지 확인
     const templatePath = path.join(dataPath, 'templates', templateId);
+    console.log('Debug - templatePath:', templatePath);
+    console.log('Debug - exists:', await exists(templatePath));
     if (await exists(templatePath)) {
       console.log(`📄 Template: ${templateId}\n`);
       
