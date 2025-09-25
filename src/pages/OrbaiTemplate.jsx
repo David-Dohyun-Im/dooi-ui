@@ -2,7 +2,8 @@ import React from 'react';
 import OrbaiDemo from '../../data/components/Hero/OrbaiDemo';
 import QuoteDemo from '../../data/components/Text/QuoteDemo';
 import DemoOne from '../../data/components/Navbars/designaliDemo';
-import OrbaiBenefitsDemo from '../../data/components/Benefits/OrbaiBenefitsDemo';
+import OrbFeatureDemo from '../../data/components/Features/OrbFeatureDemo';
+import OrbProcessDemo from '../../data/components/Process/OrbProcessDemo';
 
 export default function OrbaiTemplate() {
   return (
@@ -18,8 +19,11 @@ export default function OrbaiTemplate() {
         <QuoteDemo />
       </div>
       
-      {/* 혜택 섹션 */}
-      <OrbaiBenefitsDemo />
+      {/* Features 섹션 */}
+      <OrbFeatureDemo />
+      
+      {/* Process 섹션 */}
+      <OrbProcessDemo />
     </div>
   );
 }
