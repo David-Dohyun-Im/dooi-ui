@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import LandingMorphic from './pages/LandingMorphic.jsx'
 import ShuffleTemplate from './pages/ShuffleTemplate.jsx'
+import OrbaiTemplate from './pages/OrbaiTemplate.jsx'
 
 const pages = [
   { id: 'landing-morphic', name: 'Landing Morphic', component: LandingMorphic },
-  { id: 'shuffle-template', name: 'Shuffle Template', component: ShuffleTemplate }
+  { id: 'shuffle-template', name: 'Shuffle Template', component: ShuffleTemplate },
+  { id: 'orbai-demo', name: 'Orbai Template', component: OrbaiTemplate }
 ]
 
 function App() {
