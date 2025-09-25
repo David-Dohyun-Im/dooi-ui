@@ -9,6 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function listTemplates() {
   try {
     const dataPath = path.join(__dirname, 'data');
+    const srcPath = path.join(__dirname, 'src', 'pages');
     const components = [];
     const templates = [];
     
@@ -28,7 +29,23 @@ async function listTemplates() {
       }
     }
     
-    // 템플릿 목록
+    // src/pages 템플릿 목록
+    if (await exists(srcPath)) {
+      const files = await fs.readdir(srcPath);
+      for (const file of files) {
+        if (file.endsWith('.jsx') || file.endsWith('.tsx')) {
+          const name = path.basename(file, path.extname(file));
+          templates.push({ 
+            id: name.toLowerCase().replace('template', ''), 
+            name: name,
+            type: 'template',
+            description: `Complete ${name} template from src/pages`
+          });
+        }
+      }
+    }
+    
+    // 기존 data/templates 목록
     const templatesPath = path.join(dataPath, 'templates');
     if (await exists(templatesPath)) {
       const templateDirs = await fs.readdir(templatesPath);
@@ -73,8 +90,43 @@ async function listTemplates() {
 async function getTemplate(templateId) {
   try {
     const dataPath = path.join(__dirname, 'data');
+    const srcPath = path.join(__dirname, 'src', 'pages');
     
-    // 템플릿인지 확인
+    // src/pages 템플릿인지 확인
+    const srcTemplatePath = path.join(srcPath, `${templateId.charAt(0).toUpperCase() + templateId.slice(1)}Template.jsx`);
+    if (await exists(srcTemplatePath)) {
+      console.log(`📄 Template: ${templateId} (from src/pages)\n`);
+      
+      const content = await fs.readFile(srcTemplatePath, 'utf8');
+      
+      console.log(`📋 ${templateId.charAt(0).toUpperCase() + templateId.slice(1)} Template`);
+      console.log(`📝 Complete template from src/pages\n`);
+      
+      // 템플릿별 의존성 정보
+      const templateDeps = getTemplateDependencies(templateId);
+      if (templateDeps.npm.length > 0) {
+        console.log('📦 Dependencies:');
+        console.log(`  npm install ${templateDeps.npm.join(' ')}`);
+        if (templateDeps.peer.length > 0) {
+          console.log(`  Peer dependencies: ${templateDeps.peer.join(', ')}`);
+        }
+        console.log('');
+      }
+      
+      console.log('🚀 Installation Guide:');
+      if (templateDeps.npm.length > 0) {
+        console.log('  1. Install dependencies:');
+        console.log(`     npm install ${templateDeps.npm.join(' ')}`);
+        console.log('  2. Copy template code to your project');
+        console.log('  3. Import and use in your code\n');
+      }
+      
+      console.log('📄 Template Code:');
+      console.log(content);
+      return;
+    }
+    
+    // 기존 data/templates 템플릿인지 확인
     const templatePath = path.join(dataPath, 'templates', templateId);
     if (await exists(templatePath)) {
       console.log(`📄 Template: ${templateId}\n`);
@@ -171,6 +223,26 @@ async function getTemplate(templateId) {
     console.error('Error getting template:', error.message);
     process.exit(1);
   }
+}
+
+function getTemplateDependencies(templateId) {
+  // 템플릿별 의존성 매핑
+  const deps = {
+    'landing': {
+      npm: ['three', '@react-three/fiber'],
+      peer: ['react', 'react-dom']
+    },
+    'orbai': {
+      npm: ['three', '@react-three/fiber', 'framer-motion'],
+      peer: ['react', 'react-dom']
+    },
+    'shuffle': {
+      npm: ['framer-motion'],
+      peer: ['react', 'react-dom']
+    }
+  };
+  
+  return deps[templateId] || { npm: ['react', 'react-dom'], peer: [] };
 }
 
 function getComponentDependencies(category, name) {
