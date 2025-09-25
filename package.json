@@ -1,6 +1,6 @@
 {
   "name": "dooi-ui",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Curated UI Component Templates with Rich Metadata - React Three.js components with enhanced CLI experience",
   "main": "bin.js",
   "bin": {
