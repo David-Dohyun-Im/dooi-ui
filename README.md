@@ -18,7 +18,7 @@ npx dooi-ui list
 ### Get a Template
 
 ```bash
-# Get a complete template from src/pages
+# Get a complete template
 npx dooi-ui get landing
 npx dooi-ui get orbai
 npx dooi-ui get shuffle
@@ -27,20 +27,9 @@ npx dooi-ui get shuffle
 npx dooi-ui get ui/fluid-blob
 ```
 
-## 📦 Available Components & Templates
+## 📦 Available Templates
 
-### 🎨 Components
-
-| Category | Component | Description | Tags |
-|----------|-----------|-------------|------|
-| **ui** | `fluid-blob` | Basic 3D fluid blob component for backgrounds and visual effects | 3d, background, visual-effects, three.js |
-| **ui** | `shuffle-grid` | Animated image shuffle grid with smooth transitions and hover effects | animation, grid, cards, transitions, interactive |
-| **Hero** | `FluidBlobDemo` | Complete 3D lava lamp hero section with morphing background and text overlay | 3d, hero, lava-lamp, morphing, complete-section |
-| **Cards** | `ShuffleGridDemo` | Animated image shuffle grid with smooth transitions and hover effects | animation, grid, cards, transitions, interactive |
-
-### 🏗️ Templates
-
-### Complete Templates (from data/templates)
+### Complete Templates
 | Template | Description | Dependencies |
 |----------|-------------|--------------|
 | `landing` | Landing page with fluid blob hero | three, @react-three/fiber |
@@ -53,7 +42,6 @@ npx dooi-ui get ui/fluid-blob
 | `ui/fluid-blob` | 3D animated blob with shader effects | three, @react-three/fiber |
 | `Hero/FluidBlobDemo` | Hero section with lava lamp background | three, @react-three/fiber |
 | `Cards/ShuffleGridDemo` | Animated image shuffle grid | framer-motion |
->>>>>>> templates
 
 ## 🛠️ Usage
 
@@ -67,7 +55,7 @@ npx dooi-ui list
 ### Download Templates
 
 ```bash
-# Get complete templates from src/pages
+# Get complete templates
 npx dooi-ui get landing
 npx dooi-ui get orbai
 npx dooi-ui get shuffle
@@ -108,30 +96,6 @@ npx dooi-ui get Cards/ShuffleGridDemo
 
 ```
 DooiUI/
-<<<<<<< HEAD
-├─ data/                      # Curated templates & components
-│  ├─ components/             # Individual components with metadata
-│  │  ├─ ui/                  # UI primitives
-│  │  │  ├─ fluid-blob/       # 3D fluid blob component
-│  │  │  │  ├─ fluid-blob.tsx
-│  │  │  │  └─ meta.json      # Component metadata
-│  │  │  └─ shuffle-grid/     # Animated grid component
-│  │  │     ├─ shuffle-grid.tsx
-│  │  │     └─ meta.json      # Component metadata
-│  │  ├─ Hero/                # Hero sections
-│  │  │  └─ FluidBlobDemo/    # Hero demo component
-│  │  │     ├─ FluidBlobDemo.tsx
-│  │  │     └─ meta.json      # Component metadata
-│  │  └─ Cards/               # Card components
-│  │     └─ ShuffleGridDemo/  # Card demo component
-│  │        ├─ ShuffleGridDemo.tsx
-│  │        └─ meta.json      # Component metadata
-│  ├─ templates/              # Complete templates
-│  │  ├─ landing-morphic/     # Landing page template
-│  │  └─ pricing-classic/     # Pricing page template
-│  └─ index.json              # Component registry
-├─ bin.js                     # Enhanced npx entry point
-=======
 ├─ data/                      # Templates and components
 │  ├─ templates/              # Complete page templates
 │  │  ├─ landing/             # Landing page template
@@ -148,33 +112,24 @@ DooiUI/
 │     ├─ Hero/                # Hero sections
 │     └─ Cards/               # Card components
 ├─ bin.js                     # npx entry point
->>>>>>> templates
 └─ package.json               # Package configuration
 ```
 
-## ✨ New Features in v0.2.0
+## ✨ Features
 
-- **Rich Metadata System**: Each component now includes detailed metadata with descriptions, tags, and dependencies
-- **Enhanced CLI Experience**: Improved `list` command with categorized output and tag information
+- **Rich Metadata System**: Each template includes detailed metadata with dependencies and descriptions
+- **Enhanced CLI Experience**: Improved `list` command with categorized output
 - **Component Relationships**: Track which components use other components
 - **Detailed Dependency Information**: Automatic dependency detection and installation guides
-- **Better Organization**: Components organized in individual directories with metadata files
+- **Better Organization**: Templates organized in individual directories with metadata files
 
 ## 🤝 Contributing
 
 1. Fork the repository
-<<<<<<< HEAD
-2. Add your templates to `data/components/` or `data/templates/`
-3. Create a `meta.json` file for each component with proper metadata
-4. Update `data/index.json` with component information
-5. Test with `npx dooi-ui list` and `npx dooi-ui get <component>`
-6. Submit a pull request
-=======
 2. Add your templates to `data/templates/` for complete pages or `data/components/` for individual components
 3. Create a `meta.json` file for each template with dependencies and metadata
 4. Test with `npx dooi-ui list` and `npx dooi-ui get <template-name>`
 5. Submit a pull request
->>>>>>> templates
 
 ## 📄 License
 
