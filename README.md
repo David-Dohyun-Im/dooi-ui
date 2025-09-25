@@ -18,10 +18,16 @@ npx dooi-ui list
 ### Get a Template
 
 ```bash
-# Get a complete template
+# Get template information
 npx dooi-ui get landing
-npx dooi-ui get orbai
-npx dooi-ui get shuffle
+
+# Download template files
+npx dooi-ui get landing --download
+npx dooi-ui get landing -d
+
+# Download to specific directory
+npx dooi-ui get landing -o ./my-project
+npx dooi-ui get landing --output ./my-project
 
 # Get a specific component
 npx dooi-ui get ui/fluid-blob
@@ -55,10 +61,17 @@ npx dooi-ui list
 ### Download Templates
 
 ```bash
-# Get complete templates
+# Get template information only
 npx dooi-ui get landing
-npx dooi-ui get orbai
-npx dooi-ui get shuffle
+
+# Download template files to current directory
+npx dooi-ui get landing --download
+npx dooi-ui get orbai -d
+npx dooi-ui get shuffle --download
+
+# Download to specific directory
+npx dooi-ui get landing -o ./my-landing-page
+npx dooi-ui get orbai --output ./my-orbai-site
 
 # Get specific components
 npx dooi-ui get ui/fluid-blob
@@ -70,7 +83,9 @@ npx dooi-ui get Cards/ShuffleGridDemo
 
 ```bash
 npx dooi-ui list                    # List all templates and components
-npx dooi-ui get <template-id>       # Get complete template (landing, orbai, shuffle)
+npx dooi-ui get <template-id>       # Get template information
+npx dooi-ui get <template-id> --download  # Download template files
+npx dooi-ui get <template-id> -o <dir>    # Download to specific directory
 npx dooi-ui get <category>/<name>   # Get individual component
 npx dooi-ui help                    # Show help
 ```
@@ -81,10 +96,13 @@ npx dooi-ui help                    # Show help
 # List everything available
 npx dooi-ui list
 
-# Get complete templates
+# Get template information
 npx dooi-ui get landing
-npx dooi-ui get orbai
-npx dooi-ui get shuffle
+
+# Download templates
+npx dooi-ui get landing --download
+npx dooi-ui get orbai -d
+npx dooi-ui get shuffle -o ./my-project
 
 # Get individual components
 npx dooi-ui get ui/fluid-blob
@@ -119,9 +137,32 @@ DooiUI/
 
 - **Rich Metadata System**: Each template includes detailed metadata with dependencies and descriptions
 - **Enhanced CLI Experience**: Improved `list` command with categorized output
+- **File Download Support**: Download templates directly to your project with `--download` flag
+- **Flexible Output**: Download to current directory or specify custom directory with `-o` flag
 - **Component Relationships**: Track which components use other components
 - **Detailed Dependency Information**: Automatic dependency detection and installation guides
 - **Better Organization**: Templates organized in individual directories with metadata files
+
+## 💾 Download Options
+
+### Basic Download
+```bash
+# Download to current directory
+npx dooi-ui get landing --download
+npx dooi-ui get landing -d
+```
+
+### Custom Directory
+```bash
+# Download to specific directory
+npx dooi-ui get landing -o ./my-landing-page
+npx dooi-ui get orbai --output ./my-orbai-site
+```
+
+### What Gets Downloaded
+- **Template files**: Complete React components ready to use
+- **Metadata files**: Dependencies and usage information
+- **Installation guide**: Step-by-step setup instructions
 
 ## 🤝 Contributing
 
