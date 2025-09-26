@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/data/components/ui/accordion-1';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion-1';
 import { motion } from 'framer-motion';
 
 export default function AccordionDemo() {

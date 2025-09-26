@@ -1,4 +1,4 @@
-import StickyFooter from "@/data/components/ui/sticky-footer";
+import StickyFooter from "../ui/sticky-footer";
 
 const DemoOne = () => {
   return    (<main className="bg-background text-foreground">

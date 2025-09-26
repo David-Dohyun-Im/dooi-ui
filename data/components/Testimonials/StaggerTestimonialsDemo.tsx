@@ -1,4 +1,4 @@
-import { StaggerTestimonials } from "@/data/components/ui/stagger-testimonials";
+import { StaggerTestimonials } from "../ui/stagger-testimonials";
 
 const StaggerTestimonialsDemo = () => {
   return (
