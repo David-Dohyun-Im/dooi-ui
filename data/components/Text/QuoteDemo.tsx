@@ -6,7 +6,7 @@ const QuoteDemo = () => {
         <div className="w-full">
           {/* 인용구 텍스트 */}
           <div className="w-full">
-            <h3 className="text-center text-[rgba(0,0,0,0.6)] text-[36px] font-[Satoshi-Medium] leading-[50.4px] max-w-4xl mx-auto mb-8 tracking-normal">
+            <h3 className="text-center text-[rgba(0,0,0,0.6)] text-[36px] font-[Satoshi-Medium] leading-[50.4px] max-w-7xl mx-auto mb-8 tracking-normal">
               "We harness <span className="text-black">your data</span>, understand your audience,<br />
               and use <span className="text-black">AI</span> to help your brand rise above the noise.<br />
               The best part? <span className="text-black">We execute</span>, too."

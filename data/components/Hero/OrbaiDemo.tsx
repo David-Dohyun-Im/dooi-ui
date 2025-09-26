@@ -8,7 +8,7 @@ export default function OrbaiDemo() {
     >
       
       {/* 메인 콘텐츠 */}
-      <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto px-4">
+      <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-4">
         
         {/* AI AUTOMATION FOR BUSINESSES 배지 */}
         <div 
@@ -202,13 +202,13 @@ export default function OrbaiDemo() {
         </p>
 
         {/* CTA 버튼들 */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-row gap-4 justify-center items-stretch">
           {/* 메인 CTA */}
           <motion.a 
             href="https://framebase.lemonsqueezy.com/buy/ed1b4c3d-925c-4434-8a7f-de7f9cd40560"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-black text-white rounded-[10px] px-6 py-3 shadow-[rgba(61,61,61,0.72)_0px_0.602187px_1.08394px_-1.25px,rgba(61,61,61,0.64)_0px_2.28853px_4.11936px_-2.5px,rgba(61,61,61,0.25)_0px_10px_18px_-3.75px,rgba(0,0,0,0.35)_0px_0.706592px_0.706592px_-0.583333px,rgba(0,0,0,0.34)_0px_1.80656px_1.80656px_-1.16667px,rgba(0,0,0,0.33)_0px_3.62176px_3.62176px_-1.75px,rgba(0,0,0,0.3)_0px_6.8656px_6.8656px_-2.33333px,rgba(0,0,0,0.26)_0px_13.6468px_13.6468px_-2.91667px,rgba(0,0,0,0.15)_0px_30px_30px_-3.5px]"
+            className="inline-flex items-center justify-center bg-black text-white rounded-[10px] px-6 py-3 h-full shadow-[rgba(61,61,61,0.72)_0px_0.602187px_1.08394px_-1.25px,rgba(61,61,61,0.64)_0px_2.28853px_4.11936px_-2.5px,rgba(61,61,61,0.25)_0px_10px_18px_-3.75px,rgba(0,0,0,0.35)_0px_0.706592px_0.706592px_-0.583333px,rgba(0,0,0,0.34)_0px_1.80656px_1.80656px_-1.16667px,rgba(0,0,0,0.33)_0px_3.62176px_3.62176px_-1.75px,rgba(0,0,0,0.3)_0px_6.8656px_6.8656px_-2.33333px,rgba(0,0,0,0.26)_0px_13.6468px_13.6468px_-2.91667px,rgba(0,0,0,0.15)_0px_30px_30px_-3.5px]"
             style={{ opacity: 1, willChange: 'auto' }}
             whileHover={{ 
               backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -280,7 +280,7 @@ export default function OrbaiDemo() {
           {/* 보조 CTA */}
           <motion.a 
             href="#services"
-            className="inline-flex items-center justify-center rounded-[10px] px-6 py-3"
+            className="inline-flex items-center justify-center rounded-[10px] px-6 py-3 h-full"
             style={{ 
               backgroundColor: 'rgb(245, 245, 245)',
               borderRadius: '10px',
