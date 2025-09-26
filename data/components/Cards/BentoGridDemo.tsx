@@ -59,11 +59,28 @@ const features = [
 
 function BentoDemo() {
   return (
-    <BentoGrid className="lg:grid-rows-3">
-      {features.map((feature) => (
-        <BentoCard key={feature.name} {...feature} />
-      ))}
-    </BentoGrid>
+    <div className="w-full">
+      {/* Header Text Container */}
+      <div className="flex flex-col items-center justify-center max-w-5xl mx-auto px-4 mb-16">
+        <div className="text-center">
+          <h1 className="text-[56px] font-medium leading-[67.2px] tracking-[-3px] text-center text-[#121212] font-['Inter'] mb-4">
+            Arrange all within one spot
+          </h1>
+          <p className="text-[20px] font-normal leading-[30px] text-center text-[#6D6D6D] font-['Inter']">
+            Take charge of your tasks, projects, finances, contacts, events, resources, notes, habits, and goals in one seamless hub.
+          </p>
+        </div>
+      </div>
+
+      {/* Bento Grid - Full Width */}
+      <div className="w-full px-4">
+        <BentoGrid className="lg:grid-rows-3 max-w-none">
+          {features.map((feature) => (
+            <BentoCard key={feature.name} {...feature} />
+          ))}
+        </BentoGrid>
+      </div>
+    </div>
   );
 }
 

@@ -5,8 +5,8 @@ import { LiquidButton } from "../ui/liguid-glass-button";
 
 export const SimpleSaaSHeroDemo = () => {
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center py-20">
-      <div className="flex flex-col items-center justify-center space-y-12 max-w-5xl mx-auto px-4">
+    <div className="bg-white min-h-screen flex items-center justify-center py-32">
+      <div className="flex flex-col items-center justify-center max-w-5xl mx-auto px-4">
         {/* Title */}
         <motion.div 
           className="text-center"
@@ -23,7 +23,7 @@ export const SimpleSaaSHeroDemo = () => {
 
         {/* Description */}
         <motion.div 
-          className="text-center max-w-[768px]"
+          className="text-center max-w-[768px] mt-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
@@ -37,7 +37,7 @@ export const SimpleSaaSHeroDemo = () => {
 
         {/* Button */}
         <motion.div 
-          className="flex justify-center"
+          className="flex justify-center mt-[30px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
@@ -54,7 +54,7 @@ export const SimpleSaaSHeroDemo = () => {
 
         {/* Screenshot Image */}
         <motion.div 
-          className="w-[950px] h-[633px] border-4 border-[#121212] rounded-2xl bg-white overflow-hidden shadow-2xl mt-[120px]"
+          className="w-[950px] h-[633px] border-4 border-[#121212] rounded-2xl bg-white overflow-hidden shadow-2xl mt-[250px]"
           initial={{ 
             opacity: 0, 
             scale: 0.8,

@@ -1,8 +1,8 @@
 "use client";
 
-import React, { type SVGProps } from "react";
-import { GradientHeading } from "@/components/ui/gradient-heading";
-import { LogoCarousel } from "@/components/ui/logo-carousel";
+import { type SVGProps } from "react";
+import { GradientHeading } from "../ui/gradient-heading";
+import { LogoCarousel } from "../ui/logo-carousel";
 
 function AppleIcon(props: SVGProps<SVGSVGElement>) {
   return (
