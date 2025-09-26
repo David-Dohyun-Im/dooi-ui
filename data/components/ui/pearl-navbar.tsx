@@ -32,7 +32,7 @@ export const PearlNavbar = ({ currentPage, onPageChange }: PearlNavbarProps) => 
                 </div>
 
                 {/* Center Section - Navigation Links */}
-                <div style={{opacity: 1, display: 'flex', alignItems: 'center', gap: '32px'}}>
+                <div style={{opacity: 1, display: 'flex', alignItems: 'center', gap: '64px'}}>
                     {menuItems.map((item, index) => (
                         <motion.a
                             key={index}

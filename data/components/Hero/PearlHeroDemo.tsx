@@ -3,7 +3,7 @@ import { PearlHero } from '../ui/pearl-hero'
 
 const PearlHeroDemo = () => {
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-white">
+    <div className="h-[600px] w-full flex items-center justify-center bg-white">
       <PearlHero />
     </div>
   )

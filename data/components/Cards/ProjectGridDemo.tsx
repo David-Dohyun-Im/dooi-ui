@@ -44,7 +44,7 @@ const ProjectGridDemo = () => {
         </div>
         
         {/* First row - 2 cards */}
-        <div className="flex gap-8 justify-start">
+        <div className="flex gap-8">
           <div className="flex flex-col gap-4">
             <ProjectCard
               clientName="Dazzle Inc."
@@ -119,7 +119,7 @@ const ProjectGridDemo = () => {
         </div>
         
         {/* Second row - 2 cards */}
-        <div className="flex gap-8 justify-start">
+        <div className="flex gap-8">
           <div className="flex flex-col gap-4">
             <ProjectCard
               clientName="Tech Bank Client"
