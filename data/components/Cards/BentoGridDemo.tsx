@@ -5,6 +5,7 @@ import {
   GlobeIcon,
   InputIcon,
 } from "@radix-ui/react-icons";
+import { motion } from "framer-motion";
 
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
 
@@ -61,25 +62,53 @@ function BentoDemo() {
   return (
     <div className="w-full">
       {/* Header Text Container */}
-      <div className="flex flex-col items-center justify-center max-w-5xl mx-auto px-4 mb-16">
+      <motion.div 
+        className="flex flex-col items-center justify-center max-w-5xl mx-auto px-4 mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <div className="text-center">
-          <h1 className="text-[56px] font-medium leading-[67.2px] tracking-[-3px] text-center text-[#121212] font-['Inter'] mb-4">
+          <motion.h1 
+            className="text-[56px] font-medium leading-[67.2px] tracking-[-3px] text-center text-[#121212] font-['Inter'] mb-4"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Arrange all within one spot
-          </h1>
-          <p className="text-[20px] font-normal leading-[30px] text-center text-[#6D6D6D] font-['Inter']">
+          </motion.h1>
+          <motion.p 
+            className="text-[20px] font-normal leading-[30px] text-center text-[#6D6D6D] font-['Inter']"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Take charge of your tasks, projects, finances, contacts, events, resources, notes, habits, and goals in one seamless hub.
-          </p>
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bento Grid - Full Width */}
-      <div className="w-full px-4">
+      <motion.div 
+        className="w-full px-4"
+        initial={{ opacity: 0, y: 30, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ 
+          duration: 0.8, 
+          ease: [0.16, 1, 0.3, 1], 
+          delay: 0.3
+        }}
+        viewport={{ once: true }}
+      >
         <BentoGrid className="lg:grid-rows-3 max-w-none">
           {features.map((feature) => (
             <BentoCard key={feature.name} {...feature} />
           ))}
         </BentoGrid>
-      </div>
+      </motion.div>
     </div>
   );
 }

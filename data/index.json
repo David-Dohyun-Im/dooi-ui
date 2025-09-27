@@ -20,6 +20,13 @@
       "title": "Cards – Shuffle Grid",
       "license": "MIT",
       "version": "2025.01.01-1"
+    },
+    {
+      "category": "Features",
+      "id": "SecondBrainDemo",
+      "title": "Features – Second Brain",
+      "license": "MIT",
+      "version": "2025.01.01-1"
     }
   ],
   "templates": [
