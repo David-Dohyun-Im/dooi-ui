@@ -4,6 +4,7 @@ import QuoteDemo from '../../data/components/Text/QuoteDemo';
 import DemoOne from '../../data/components/Navbars/designaliDemo';
 import OrbFeatureDemo from '../../data/components/Features/OrbFeatureDemo';
 import OrbProcessDemo from '../../data/components/Process/OrbProcessDemo';
+import ProjectTabDemo from '../../data/components/Cards/ProjectTabDemo';
 
 export default function OrbaiTemplate() {
   return (
@@ -24,6 +25,9 @@ export default function OrbaiTemplate() {
       
       {/* Process 섹션 */}
       <OrbProcessDemo />
+      
+      {/* Project Tab 섹션 */}
+      <ProjectTabDemo />
     </div>
   );
 }
