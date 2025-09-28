@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const OrbFeatureDemo = () => {
   return (
@@ -6,7 +7,13 @@ const OrbFeatureDemo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="mb-6">
+          <motion.h2 
+            className="mb-6"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          >
             <span 
               className="bg-clip-text text-transparent inline-block text-center"
               style={{
@@ -21,17 +28,21 @@ const OrbFeatureDemo = () => {
             >
               All features in 1 tool
             </span>
-          </h2>
+          </motion.h2>
           
-          <p 
+          <motion.p 
             className="text-gray-600 max-w-2xl mx-auto"
             style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '16px'
             }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
           >
             Discover features that simplify workflows & grow your business.
-          </p>
+          </motion.p>
         </div>
 
         {/* Features Container - 1200x560 */}
@@ -53,13 +64,17 @@ const OrbFeatureDemo = () => {
             }}
           >
             {/* Top Left - Image + Text Card */}
-            <div 
+            <motion.div 
               className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 flex flex-row"
               style={{
                 width: '705.6px',
                 height: '268px',
                 boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset'
               }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             >
             {/* Image Section - 336x228 */}
             <div 
@@ -120,16 +135,20 @@ const OrbFeatureDemo = () => {
                 </p>
               </div>
             </div>
-            </div>
+            </motion.div>
 
             {/* Top Right - Text Only Card */}
-            <div 
+            <motion.div 
               className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200"
               style={{
                 width: '470px',
                 height: '268px',
                 boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset'
               }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             >
             <div className="p-6 h-full flex flex-col justify-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-3">
@@ -156,7 +175,7 @@ const OrbFeatureDemo = () => {
                 Streamline tasks and boost efficiency with powerful, scalable AI-powered automation tools for growing teams and projects.
               </p>
             </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Bottom Row Container */}
@@ -169,13 +188,17 @@ const OrbFeatureDemo = () => {
             }}
           >
             {/* Bottom Left - Text Only Card */}
-            <div 
+            <motion.div 
               className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200"
               style={{
                 width: '470px',
                 height: '268px',
                 boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset'
               }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
             >
             <div className="p-6 h-full flex flex-col justify-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-3">
@@ -202,16 +225,20 @@ const OrbFeatureDemo = () => {
                 Gain deep, real-time data insights with advanced AI analytics to guide smarter strategies, decisions, and scalable business growth.
               </p>
             </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Right - Image + Text Card */}
-            <div 
+            <motion.div 
               className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 flex flex-row"
               style={{
                 width: '705.6px',
                 height: '268px',
                 boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset'
               }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             >
             {/* Image Section - 336x228 */}
             <div 
@@ -272,7 +299,7 @@ const OrbFeatureDemo = () => {
                 </p>
               </div>
             </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

@@ -46,7 +46,13 @@ const ProjectTabDemo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="mb-6">
+          <motion.h2 
+            className="mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <span 
               className="bg-clip-text text-transparent inline-block text-center"
               style={{
@@ -61,27 +67,35 @@ const ProjectTabDemo = () => {
             >
               Proven Impact & Results
             </span>
-          </h2>
+          </motion.h2>
           
-          <p 
+          <motion.p 
             className="text-gray-600 max-w-2xl mx-auto"
             style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '16px'
             }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             Explore Projects that reflect our AI expertise & real world impact.
-          </p>
+          </motion.p>
         </div>
 
         {/* Main Container - 1200x576.1 */}
-        <div 
+        <motion.div 
           className="mx-auto bg-gray-100 rounded-2xl shadow-lg border border-gray-200 flex flex-col"
           style={{
             width: '1200px',
             height: '576.1px',
             boxShadow: 'rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px, rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px, rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px, rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px, rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px, rgba(0, 0, 0, 0.02) 0px 30px 30px -4px, rgb(255, 255, 255) 0px 3px 1px 0px inset'
           }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         >
           {/* Tab Container - 1160x44 */}
           <div 
@@ -259,7 +273,7 @@ const ProjectTabDemo = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

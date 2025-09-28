@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Lenis from 'lenis'
 import PearlNavbarDemo from '../../data/components/Navbars/PearlNavbarDemo.tsx'
 import PearlHeroDemo from '../../data/components/Hero/PearlHeroDemo.tsx'
 import OurStoryDemo from '../../data/components/Features/OurStoryDemo.tsx'
@@ -9,6 +10,34 @@ import StaggerTestimonialsDemo from '../../data/components/Testimonials/StaggerT
 import StickyFooter from '../../data/components/ui/sticky-footer.tsx'
 
 const PearlTemplate = () => {
+  useEffect(() => {
+    // Lenis 스크롤 초기화 - 래퍼런스와 비슷한 감도로 설정
+    const lenis = new Lenis({
+      duration: 1.5, // 더 부드러운 스크롤을 위해 duration 증가
+      easing: (t) => 1 - Math.pow(1 - t, 3), // cubic-out 이징으로 더 자연스러운 감속
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8, // 마우스 휠 감도 감소
+      smoothTouch: true, // 터치에서도 부드러운 스크롤 활성화
+      touchMultiplier: 1.5, // 터치 감도 조정
+      infinite: false,
+    });
+
+    // RAF 루프에서 lenis 업데이트
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // 컴포넌트 언마운트 시 정리
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <main className="bg-background text-foreground">
       <PearlNavbarDemo />

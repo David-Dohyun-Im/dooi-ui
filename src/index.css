@@ -42,6 +42,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global smooth scroll settings */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 /* Custom smooth accordion animations */
 @keyframes accordion-down {
   from {

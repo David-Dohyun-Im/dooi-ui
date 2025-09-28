@@ -23,7 +23,52 @@ const DEMO_FAQS = [
   },
 ];
 
+// 기본 FAQ 컴포넌트 (제목 없음)
 export function FaqSectionWithCategoriesDemo() {
+  return (
+    <FaqSectionWithCategories
+      title=""
+      description=""
+      items={DEMO_FAQS}
+    />
+  );
+}
+
+// Orbai 템플릿용 FAQ 컴포넌트 (커스텀 제목 포함)
+export function FaqSectionWithCategoriesOrbaiDemo() {
+  return (
+    <div className="max-w-7xl mx-auto">
+      {/* Header Section */}
+      <div className="text-center mb-16">
+        <h2 className="mb-6">
+          <span 
+            className="bg-clip-text text-transparent inline-block text-center"
+            style={{
+              backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
+              fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+              fontSize: '56px',
+              fontWeight: 500,
+              letterSpacing: '-0.56px',
+              lineHeight: '67.2px',
+              WebkitFontSmoothing: 'antialiased'
+            }}
+          >
+            FAQs
+          </span>
+        </h2>
+      </div>
+      
+      <FaqSectionWithCategories
+        title=""
+        description=""
+        items={DEMO_FAQS}
+      />
+    </div>
+  );
+}
+
+// 기본 스타일 FAQ 컴포넌트 (내장 제목 사용)
+export function FaqSectionWithCategoriesDefaultDemo() {
   return (
     <FaqSectionWithCategories
       title="Frequently Asked Questions"

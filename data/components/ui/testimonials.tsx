@@ -1,12 +1,19 @@
 import { Card, CardContent, CardHeader } from './card'
 import { Avatar, AvatarFallback, AvatarImage } from './testimonials-avatar'
+import { motion } from 'framer-motion'
 
 export default function Testimonials() {
     return (
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
-                <div className="text-center mb-16">
+                <motion.div 
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
                     <h2 className="mb-6">
                         <span 
                             className="bg-clip-text text-transparent inline-block text-center"
@@ -23,9 +30,15 @@ export default function Testimonials() {
                             Testimonials
                         </span>
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">
+                <motion.div 
+                    className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2"
+                    initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                >
                     <Card className="grid grid-rows-[auto_1fr] gap-8 sm:col-span-2 sm:p-6 lg:row-span-2">
                         <CardHeader>
                             <img
@@ -132,7 +145,7 @@ export default function Testimonials() {
                             </blockquote>
                         </CardContent>
                     </Card>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

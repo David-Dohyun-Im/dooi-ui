@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 
-// NumberTicker 컴포넌트 구현
+// NumberTicker 컴포?�트 구현
 interface NumberTickerProps {
   value: number;
   duration?: number;

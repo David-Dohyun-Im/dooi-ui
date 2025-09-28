@@ -8,7 +8,12 @@ export default function OrbaiDemo() {
     >
       
       {/* 메인 콘텐츠 */}
-      <div className="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-4"
+      >
         
         {/* AI AUTOMATION FOR BUSINESSES 배지 */}
         <div 
@@ -340,7 +345,7 @@ export default function OrbaiDemo() {
             </div>
           </motion.a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

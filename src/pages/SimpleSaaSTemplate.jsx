@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
 import { SimpleSaaSHeroDemo } from '../../data/components/Hero/SimpleSaaSHeroDemo';
 import SimpleSaaSNavbar from '../../data/components/Navbars/SimpleSaaSNavbar';
 import { GradientHeading } from '../../data/components/ui/gradient-heading';
@@ -247,6 +248,34 @@ const thirdColumn = testimonials.slice(6, 9);
 
 
 export default function SimpleSaaSTemplate() {
+  useEffect(() => {
+    // Lenis 스크롤 초기화 - 래퍼런스와 비슷한 감도로 설정
+    const lenis = new Lenis({
+      duration: 1.5, // 더 부드러운 스크롤을 위해 duration 증가
+      easing: (t) => 1 - Math.pow(1 - t, 3), // cubic-out 이징으로 더 자연스러운 감속
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8, // 마우스 휠 감도 감소
+      smoothTouch: true, // 터치에서도 부드러운 스크롤 활성화
+      touchMultiplier: 1.5, // 터치 감도 조정
+      infinite: false,
+    });
+
+    // RAF 루프에서 lenis 업데이트
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // 컴포넌트 언마운트 시 정리
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}

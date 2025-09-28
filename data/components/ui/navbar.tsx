@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Equal, X } from 'lucide-react'
-import React from 'react' 
+import React from 'react'
+import { motion } from 'framer-motion' 
 
 const menuItems = [
     { name: 'Features', href: './#features' },
@@ -15,7 +16,10 @@ export const Header = () => {
     const [menuState, setMenuState] = React.useState(false)
     return (
         <header>
-            <nav
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 data-state={menuState && 'active'}
                 className="fixed left-0 w-full z-20 px-2 bg-white/10 backdrop-blur-sm border-b-2 border-white/20">
                 <div className="mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-16">
@@ -105,7 +109,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-            </nav>
+            </motion.nav>
         </header>
     )
 }

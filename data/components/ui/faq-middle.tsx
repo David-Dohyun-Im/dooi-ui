@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "../../../lib/utils";
 import { Button } from "./bento-button";
 import { Badge } from "./faq-middle-badge";
 
@@ -42,44 +42,46 @@ const FaqSectionWithCategories = React.forwardRef<HTMLElement, FaqSectionWithCat
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            {/* Header */}
-            <motion.div 
-              className="text-center space-y-4 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <motion.h2 
-                style={{ 
-                  fontSize: '40px', 
-                  fontFamily: 'Inter, sans-serif',
-                  color: '#121212',
-                  fontWeight: 'normal'
-                }}
-                initial={{ opacity: 0, y: 15 }}
+            {/* Header - only render if title is provided */}
+            {title && (
+              <motion.div 
+                className="text-center space-y-4 mb-12"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                {title}
-              </motion.h2>
-              {description && (
-                <motion.p 
+                <motion.h2 
                   style={{ 
-                    fontSize: '18px', 
+                    fontSize: '40px', 
                     fontFamily: 'Inter, sans-serif',
-                    color: '#6D6D6D'
+                    color: '#121212',
+                    fontWeight: 'normal'
                   }}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {description}
-                </motion.p>
-              )}
-            </motion.div>
+                  {title}
+                </motion.h2>
+                {description && (
+                  <motion.p 
+                    style={{ 
+                      fontSize: '18px', 
+                      fontFamily: 'Inter, sans-serif',
+                      color: '#6D6D6D'
+                    }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    {description}
+                  </motion.p>
+                )}
+              </motion.div>
+            )}
 
             {/* FAQ Items */}
             <div className="space-y-4">
@@ -114,16 +116,24 @@ const FaqSectionWithCategories = React.forwardRef<HTMLElement, FaqSectionWithCat
                         "transition-colors duration-200"
                       )}
                     >
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col">
                         {item.category && (
                           <Badge
                             variant="secondary"
-                            className="w-fit text-xs font-normal"
+                            className="w-fit text-xs font-normal mb-2 px-0"
+                            style={{
+                              fontFamily: 'Inter, sans-serif'
+                            }}
                           >
                             {item.category}
                           </Badge>
                         )}
-                        <h3 className="text-lg font-medium text-foreground group-hover:text-primary">
+                        <h3 
+                          className="text-lg font-medium text-foreground group-hover:text-primary"
+                          style={{
+                            fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif'
+                          }}
+                        >
                           {item.question}
                         </h3>
                       </div>
@@ -165,6 +175,9 @@ const FaqSectionWithCategories = React.forwardRef<HTMLElement, FaqSectionWithCat
                           <div className="px-6 pt-0 pb-6">
                             <motion.p 
                               className="text-muted-foreground leading-relaxed"
+                              style={{
+                                fontFamily: 'Inter, sans-serif'
+                              }}
                               initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.2, delay: 0.1 }}

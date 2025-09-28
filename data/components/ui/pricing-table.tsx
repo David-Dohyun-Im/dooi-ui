@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Button } from "./pricing-table-button"
-import { cn } from "@/lib/utils"
+import { cn } from "../../../lib/utils"
 import { CheckIcon, ArrowRightIcon } from "@radix-ui/react-icons"
 import NumberFlow from "@number-flow/react"
 

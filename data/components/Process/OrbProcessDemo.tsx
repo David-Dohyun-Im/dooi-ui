@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const OrbProcessDemo = () => {
   return (
@@ -6,7 +7,13 @@ const OrbProcessDemo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8">
-          <h2 className="mb-6">
+          <motion.h2 
+            className="mb-6"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <span 
               className="bg-clip-text text-transparent inline-block text-center"
               style={{
@@ -21,24 +28,37 @@ const OrbProcessDemo = () => {
             >
               Simple & Scalable
             </span>
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <motion.p 
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
             A transparent process of collaboration and feedback
-          </p>
+          </motion.p>
         </div>
 
         {/* Process Steps Container - 정확한 크기: 1200x1192 */}
         <div className="flex gap-6 mx-auto" style={{ width: '1200px', height: '1192px' }}>
           {/* 왼쪽 카드 - 588x1192 */}
-          <div className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" style={{ 
-            width: '588px', 
-            height: '1192px',
-            paddingTop: '30px',
-            paddingBottom: '44px',
-            paddingLeft: '30px',
-            paddingRight: '30px'
-          }}>
+          <motion.div 
+            className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" 
+            style={{ 
+              width: '588px', 
+              height: '1192px',
+              paddingTop: '30px',
+              paddingBottom: '44px',
+              paddingLeft: '30px',
+              paddingRight: '30px'
+            }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          >
             {/* 상단 텍스트 영역 */}
             <div className="mb-6">
               <div className="flex items-center justify-center mb-4" style={{
@@ -103,19 +123,26 @@ const OrbProcessDemo = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* 오른쪽 카드들 - 588x584 각각, 24px 간격 */}
           <div className="flex flex-col gap-6">
             {/* Step 2 카드 - 588x584 */}
-            <div className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" style={{ 
-              width: '588px', 
-              height: '584px',
-              paddingTop: '30px',
-              paddingBottom: '44px',
-              paddingLeft: '30px',
-              paddingRight: '30px'
-            }}>
+            <motion.div 
+              className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" 
+              style={{ 
+                width: '588px', 
+                height: '584px',
+                paddingTop: '30px',
+                paddingBottom: '44px',
+                paddingLeft: '30px',
+                paddingRight: '30px'
+              }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            >
               {/* 상단 텍스트 영역 */}
               <div className="mb-6">
                 <div className="flex items-center justify-center mb-4" style={{
@@ -179,17 +206,24 @@ const OrbProcessDemo = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 3 카드 - 588x584 */}
-            <div className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" style={{ 
-              width: '588px', 
-              height: '584px',
-              paddingTop: '30px',
-              paddingBottom: '44px',
-              paddingLeft: '30px',
-              paddingRight: '30px'
-            }}>
+            <motion.div 
+              className="bg-gray-100 rounded-2xl shadow-lg border border-gray-200 overflow-hidden" 
+              style={{ 
+                width: '588px', 
+                height: '584px',
+                paddingTop: '30px',
+                paddingBottom: '44px',
+                paddingLeft: '30px',
+                paddingRight: '30px'
+              }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+            >
               {/* 상단 텍스트 영역 */}
               <div className="mb-6">
                 <div className="flex items-center justify-center mb-4" style={{
@@ -256,7 +290,7 @@ const OrbProcessDemo = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { RippleButton } from "./multi-type-ripple-buttons";
 // --- Internal Helper Components (Not exported) --- //
 
@@ -182,7 +183,13 @@ export const PricingCard = ({
   `;
 
   return (
-    <div className={cardClasses.trim()}>
+    <motion.div 
+      className={cardClasses.trim()}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       {isPopular && (
         <div className="absolute -top-4 right-4 px-3 py-1 text-[12px] font-semibold rounded-full bg-black text-white dark:bg-gray-800 dark:text-white">
           Most Popular
@@ -231,14 +238,11 @@ export const PricingCard = ({
         ))}
       </ul>
       <RippleButton 
-        className={buttonClasses.trim()}
-        style={{
-          fontFamily: 'Inter, sans-serif'
-        }}
+        className={`${buttonClasses.trim()} font-inter`}
       >
         {buttonText}
       </RippleButton>
-    </div>
+    </motion.div>
   );
 };
 
@@ -267,7 +271,7 @@ export const ModernPricingPage = ({
       {showAnimatedBackground && <ShaderCanvas />}
       <main className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 py-8">
         <div className="w-full max-w-5xl mx-auto text-center mb-14">
-          <h1 
+          <motion.h1 
             className="text-[56px] leading-tight tracking-[-0.56px] bg-clip-text text-transparent inline-block text-center"
             style={{
               backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
@@ -278,21 +282,39 @@ export const ModernPricingPage = ({
               lineHeight: '67.2px',
               WebkitFontSmoothing: 'antialiased'
             }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {title}
-          </h1>
-          <p 
+          </motion.h1>
+          <motion.p 
             className="mt-3 text-foreground/80 max-w-2xl mx-auto"
             style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '16px'
             }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             {subtitle}
-          </p>
+          </motion.p>
         </div>
         <div className="flex flex-row gap-6 justify-center items-center w-full max-w-4xl">
-          {plans.map((plan) => <PricingCard key={plan.planName} {...plan} />)}
+          {plans.map((plan, index) => (
+            <motion.div
+              key={plan.planName}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 + index * 0.1 }}
+            >
+              <PricingCard {...plan} />
+            </motion.div>
+          ))}
         </div>
       </main>
     </div>
