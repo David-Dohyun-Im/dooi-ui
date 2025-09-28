@@ -1,7 +1,8 @@
 import { Icons } from "./footer-middle-icons"
-import { Button } from "./button"
+import { Button } from "./button-2"
 import { Label } from "./footer-middle-label"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import * as React from "react"
 
 function StackedCircularFooter() {
   return (

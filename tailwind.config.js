@@ -6,7 +6,13 @@ export default {
     "./data/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'forma': ['Forma', 'sans-serif'],
+        'manrope': ['Manrope', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
