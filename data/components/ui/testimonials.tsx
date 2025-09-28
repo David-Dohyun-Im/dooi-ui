@@ -3,11 +3,26 @@ import { Avatar, AvatarFallback, AvatarImage } from './testimonials-avatar'
 
 export default function Testimonials() {
     return (
-        <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
-                <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-                    <h2 className="text-4xl font-medium lg:text-5xl">Build by makers, loved by thousand developers</h2>
-                    <p>Gemini is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p>
+        <section className="py-20 px-4">
+            <div className="max-w-7xl mx-auto">
+                {/* Header Section */}
+                <div className="text-center mb-16">
+                    <h2 className="mb-6">
+                        <span 
+                            className="bg-clip-text text-transparent inline-block text-center"
+                            style={{
+                                backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
+                                fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                                fontSize: '56px',
+                                fontWeight: 500,
+                                letterSpacing: '-0.56px',
+                                lineHeight: '67.2px',
+                                WebkitFontSmoothing: 'antialiased'
+                            }}
+                        >
+                            Testimonials
+                        </span>
+                    </h2>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">

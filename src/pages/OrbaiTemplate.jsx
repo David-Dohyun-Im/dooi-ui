@@ -5,6 +5,8 @@ import DemoOne from '../../data/components/Navbars/designaliDemo';
 import OrbFeatureDemo from '../../data/components/Features/OrbFeatureDemo';
 import OrbProcessDemo from '../../data/components/Process/OrbProcessDemo';
 import ProjectTabDemo from '../../data/components/Cards/ProjectTabDemo';
+import TestimonialsDemo from '../../data/components/Testimonials/TestimonialsDemo';
+import { Default as AnimatedGlassyPricingDemo } from '../../data/components/Pricing/AnimatedGlassyPricingDemo';
 
 export default function OrbaiTemplate() {
   return (
@@ -28,6 +30,12 @@ export default function OrbaiTemplate() {
       
       {/* Project Tab 섹션 */}
       <ProjectTabDemo />
+      
+      {/* Testimonials 섹션 */}
+      <TestimonialsDemo />
+      
+      {/* Pricing 섹션 */}
+      <AnimatedGlassyPricingDemo />
     </div>
   );
 }
