@@ -1,16 +1,12 @@
-// This template requires the Embla Auto Scroll plugin to be installed:
-//
-// npm install embla-carousel-auto-scroll
-
 "use client";
 
-import AutoScroll from "embla-carousel-auto-scroll";
-
+import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
+  type CarouselApi,
+} from "./logos3-carousel";
 
 interface Logo {
   id: string;
@@ -78,10 +74,23 @@ const Logos3 = ({
     },
   ],
 }: Logos3Props) => {
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // 3초마다 다음 슬라이드로 이동
+
+    return () => clearInterval(interval);
+  }, [api]);
   return (
-    <section className="py-64">
-      <div className="container flex flex-col items-center text-center">
-        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
+    <section className="w-full py-20 px-4">
+      <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl text-white/60">
           {heading}
         </h1>
       </div>
@@ -89,7 +98,7 @@ const Logos3 = ({
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
             opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true })]}
+            setApi={setApi}
           >
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
@@ -102,7 +111,10 @@ const Logos3 = ({
                       <img
                         src={logo.image}
                         alt={logo.description}
-                        className={logo.className}
+                        className={`${logo.className} brightness-0 saturate-100`}
+                        style={{
+                          filter: 'brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                        }}
                       />
                     </div>
                   </div>

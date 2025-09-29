@@ -1,8 +1,8 @@
 import { AnimatedContainer,
   BgGradient,
   Hero,
-  TextStagger } from "../../ui/hero-animated"
-import { Button } from "../../ui/button-3"
+  TextStagger } from "../ui/hero-animated"
+import { Button } from "../ui/button-3"
 export function HeroAnimatedDemo() {
 
     return (

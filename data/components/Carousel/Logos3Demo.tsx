@@ -1,4 +1,4 @@
-import { Logos3 } from "@/components/blocks/logos3"
+import { Logos3 } from "../ui/logos3"
 
 const demoData = {
   heading: "Trusted by these companies",
@@ -6,49 +6,49 @@ const demoData = {
     {
       id: "logo-1",
       description: "Astro",
-      image: "https://www.shadcnblocks.com/images/block/logos/astro.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/astro-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-2",
       description: "Figma",
-      image: "https://www.shadcnblocks.com/images/block/logos/figma.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/figma-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-3",
       description: "Next.js",
-      image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/nextjs-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-4",
       description: "React",
-      image: "https://www.shadcnblocks.com/images/block/logos/react.png",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/react-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-5",
       description: "shadcn/ui",
-      image: "https://www.shadcnblocks.com/images/block/logos/shadcn-ui.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcn-ui-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-6",
       description: "Supabase",
-      image: "https://www.shadcnblocks.com/images/block/logos/supabase.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/supabase-wordmark.svg",
       className: "h-7 w-auto",
     },
     {
       id: "logo-7",
       description: "Tailwind CSS",
-      image: "https://www.shadcnblocks.com/images/block/logos/tailwind.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/tailwind-wordmark.svg",
       className: "h-4 w-auto",
     },
     {
       id: "logo-8",
       description: "Vercel",
-      image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/vercel-wordmark.svg",
       className: "h-7 w-auto",
     },
   ],

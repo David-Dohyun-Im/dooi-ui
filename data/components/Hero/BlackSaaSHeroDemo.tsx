@@ -1,15 +1,15 @@
 import { AnimatedContainer,
   BgGradient,
-  Hero,
-  TextStagger } from "../ui/hero-animated"
+  Hero } from "../ui/hero-animated"
 
 export function BlackSaaSHeroDemo() {
 
     return (
-        <Hero className="space-y-4 px-6 py-12 text-zinc-100 md:px-10 lg:px-12 bg-black">
+        <Hero className="space-y-4 px-6 pt-12 pb-0 text-zinc-100 md:px-10 lg:px-12 bg-black relative h-[1000px]">
         <BgGradient
           gradientColors={"blue"}
           gradientSize="lg"
+          className="absolute top-0 left-0 right-0 h-1/2 opacity-30"
         />
         
         {/* Announcing API 2.0 Banner */}
@@ -43,8 +43,7 @@ export function BlackSaaSHeroDemo() {
                 textDecorationSkipInk: 'auto',
                 textTransform: 'none',
                 textUnderlineOffset: 'auto',
-                textWrapMode: 'wrap',
-                textWrapStyle: 'auto',
+                textWrap: 'wrap',
                 whiteSpaceCollapse: 'preserve',
                 willChange: 'transform',
                 wordBreak: 'break-word',
@@ -71,7 +70,7 @@ export function BlackSaaSHeroDemo() {
           transition={{ delay: 0.6 }}
         >
           <button 
-            className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors"
+            className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors text-[16px] font-['Geist']"
             style={{
               borderBottomWidth: '0px',
               borderColor: 'rgba(0, 0, 0, 0)',
@@ -88,7 +87,7 @@ export function BlackSaaSHeroDemo() {
             Get started
           </button>
           <button 
-            className="px-6 py-3 text-white rounded-full font-medium transition-colors"
+            className="px-6 py-3 text-white rounded-full font-medium transition-colors text-[16px] font-['Geist']"
             style={{
               borderBottomWidth: '1px',
               borderColor: 'rgba(255, 255, 255, 0.15)',
