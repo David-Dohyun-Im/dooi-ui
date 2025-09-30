@@ -22,7 +22,7 @@ const plans = [
         name: "Pro",
         price: { monthly: 49, yearly: 470 },
         level: "pro",
-        popular: true,
+        popular: false,
     },
     {
         name: "Enterprise",
@@ -40,7 +40,7 @@ function PricingTableDemo() {
             defaultInterval="monthly"
             onPlanSelect={(plan: PlanLevel) => console.log("Selected plan:", plan)}
             containerClassName="py-12"
-            buttonClassName="bg-primary hover:bg-primary/90"
+            buttonClassName="bg-orange-400 hover:bg-orange-500 text-white"
         />
     );
 }

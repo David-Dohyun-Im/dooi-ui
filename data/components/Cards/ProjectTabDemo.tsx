@@ -54,34 +54,21 @@ const ProjectTabDemo = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <span 
-              className="bg-clip-text text-transparent inline-block text-center"
+              className="inline-block text-center"
               style={{
-                backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
-                fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                color: '#000000',
+                fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                 fontSize: '56px',
-                fontWeight: 500,
+                fontWeight: 100,
                 letterSpacing: '-0.56px',
                 lineHeight: '67.2px',
                 WebkitFontSmoothing: 'antialiased'
               }}
             >
-              Proven Impact & Results
+              Case Studies
             </span>
           </motion.h2>
           
-          <motion.p 
-            className="text-gray-600 max-w-2xl mx-auto"
-            style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '16px'
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          >
-            Explore Projects that reflect our AI expertise & real world impact.
-          </motion.p>
         </div>
 
         {/* Main Container - 1200x576.1 */}
@@ -127,9 +114,9 @@ const ProjectTabDemo = () => {
                 <span 
                   className="font-medium text-gray-900 uppercase tracking-wide"
                   style={{
-                    fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                    fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                     fontSize: '12px',
-                    fontWeight: 500
+                    fontWeight: 100
                   }}
                 >
                   PROJECT {project.id}
@@ -200,9 +187,9 @@ const ProjectTabDemo = () => {
                   <h3 
                     className="text-gray-900 mb-4"
                     style={{
-                      fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                      fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                       fontSize: '20px',
-                      fontWeight: 600,
+                      fontWeight: 100,
                       lineHeight: '24px',
                       letterSpacing: '-0.2px'
                     }}

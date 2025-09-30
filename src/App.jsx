@@ -5,6 +5,7 @@ import OrbaiTemplate from './pages/OrbaiTemplate.jsx'
 import PearlTemplate from './pages/PearlTemplate.jsx'
 import SimpleSaaSTemplate from './pages/SimpleSaaSTemplate.jsx'
 import BlackSaaSTemplate from './pages/BlackSaaSTemplate.jsx'
+import MixTemplate from './pages/MixTemplate.jsx'
 
 const pages = [
   { id: 'landing-morphic', name: 'Landing Morphic', component: LandingMorphic },
@@ -12,7 +13,8 @@ const pages = [
   { id: 'orbai-demo', name: 'Orbai Template', component: OrbaiTemplate },
   { id: 'pearl-template', name: 'Pearl Template', component: PearlTemplate },
   { id: 'simple-saas-template', name: 'Simple SaaS Template', component: SimpleSaaSTemplate },
-  { id: 'black-saas-template', name: 'Black SaaS Template', component: BlackSaaSTemplate }
+  { id: 'black-saas-template', name: 'Black SaaS Template', component: BlackSaaSTemplate },
+  { id: 'mix-template', name: 'Mix Template', component: MixTemplate }
 ]
 
 function App() {

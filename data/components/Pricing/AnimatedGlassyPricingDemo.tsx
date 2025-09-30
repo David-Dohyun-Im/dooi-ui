@@ -30,8 +30,8 @@ const myPricingPlans: PricingCardProps[] = [
 
 const Default = () => {
   return <ModernPricingPage
-        title="Pricing"
-        subtitle="Start for free, then grow with us. Flexible plans for projects of all sizes."
+        title="Plans"
+        subtitle=""
         plans={myPricingPlans}
         showAnimatedBackground={true}
       />

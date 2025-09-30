@@ -15,12 +15,12 @@ const OrbProcessDemo = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <span 
-              className="bg-clip-text text-transparent inline-block text-center"
+              className="inline-block text-center"
               style={{
-                backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
-                fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                color: '#000000',
+                fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                 fontSize: '56px',
-                fontWeight: 500,
+                fontWeight: 100,
                 letterSpacing: '-0.56px',
                 lineHeight: '67.2px',
                 WebkitFontSmoothing: 'antialiased'
@@ -30,15 +30,6 @@ const OrbProcessDemo = () => {
             </span>
           </motion.h2>
           
-          <motion.p 
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          >
-            A transparent process of collaboration and feedback
-          </motion.p>
         </div>
 
         {/* Process Steps Container - 정확한 크기: 1200x1192 */}
@@ -86,14 +77,14 @@ const OrbProcessDemo = () => {
                   <path d="M15 9l.94-2.07L18 6l-2.06-.93L15 3l-.92 2.07L12 6l2.08.93zM3.5 11L4 9l2-.5L4 8l-.5-2L3 8l-2 .5L3 9z" />
                 </svg>
               </div>
-              <h3 className="mb-2" style={{
-                fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
-                fontSize: '20px',
-                fontWeight: '500',
-                color: '#000000'
-              }}>
-                Workflow Assessment
-              </h3>
+                <h3 className="mb-2" style={{
+                  fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
+                  fontSize: '20px',
+                  fontWeight: '100',
+                  color: '#000000'
+                }}>
+                  Workflow Assessment
+                </h3>
               <p className="text-gray-600 leading-relaxed mb-4" style={{
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '16px'
@@ -170,9 +161,9 @@ const OrbProcessDemo = () => {
                   </svg>
                 </div>
                 <h3 className="mb-2" style={{
-                  fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                  fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                   fontSize: '20px',
-                  fontWeight: '500',
+                  fontWeight: '100',
                   color: '#000000'
                 }}>
                   Deploy with Confidence

@@ -19,9 +19,9 @@ export default function Testimonials() {
                             className="bg-clip-text text-transparent inline-block text-center"
                             style={{
                                 backgroundImage: 'linear-gradient(180deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%)',
-                                fontFamily: 'Satoshi, "Satoshi Placeholder", sans-serif',
+                                fontFamily: 'Arial Rounded MT Regular, Arial, sans-serif',
                                 fontSize: '56px',
-                                fontWeight: 500,
+                                fontWeight: 100,
                                 letterSpacing: '-0.56px',
                                 lineHeight: '67.2px',
                                 WebkitFontSmoothing: 'antialiased'
